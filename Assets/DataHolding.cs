@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.TMPro;
+using TMPro;
 
 public class DataHolding : MonoBehaviour
 {
@@ -20,6 +20,6 @@ public class DataHolding : MonoBehaviour
 
     public void OnSubmit() {
         image = imageDisplay.GetComponent<Image>();
-        caption = captionText.GetComponent<TMPro>();
+        caption = captionText.GetComponent<TMP_Text>().text;
     }
 }
