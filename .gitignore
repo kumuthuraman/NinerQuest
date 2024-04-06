@@ -72,8 +72,11 @@
 # /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 settings.json
+extensions.json
+launch.json
 # Excluded folders
 /.vs/
+/.vscode/
 /Temp
 AssetBundles/
 [Bb]in/
