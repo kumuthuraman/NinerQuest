@@ -10,8 +10,8 @@ public class NavigationLogic : MonoBehaviour
         currScene = SceneManager.GetActiveScene();
     }
     public void GoTasks() {
-        if (currScene.name != "Tasks") {
-            SceneManager.LoadScene("Tasks");
+        if (currScene.name != "TaskList") {
+            SceneManager.LoadScene("TaskList");
         }
     }
     public void GoFeed() {
