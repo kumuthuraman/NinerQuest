@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "706672109896",
+    "project_id": "ninerquest-71c43",
+    "storage_bucket": "ninerquest-71c43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706672109896:android:f335f61e485c81a6d32b7d",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.com.unity.template.mobile2D"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvVY5FSQRneOOe5qY30RrwGYHgQDrEe1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
