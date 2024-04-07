@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Firebase.Firestore;
+using System.Threading.Tasks;
+using Firebase.Extensions;
+using System;
 
 
 public class CreatePost : MonoBehaviour
@@ -9,42 +14,21 @@ public class CreatePost : MonoBehaviour
     public RawImage anotherImage; // Assuming a RawImage component is present in the scene
 
     // Start is called before the first frame update
-    void Start()
-    {    
-        System.Random random = new System.Random();
+    async void Start()
+    {
         Debug.Log("Create post script");
-        // In a script in the "createPost" scene:
-string imagePath = Application.persistentDataPath + "/" + random.Next(10,50) + ".png";
-Debug.Log("Path: " + imagePath + " | " + System.IO.File.Exists(imagePath));
 
-if (System.IO.File.Exists(imagePath))
-{
-    byte[] imageData = System.IO.File.ReadAllBytes(imagePath);
-    Texture2D loadedImage = new Texture2D(500, 400); // Set appropriate dimensions
-    loadedImage.LoadImage(imageData);
-    loadedImage.Apply();
+        string photoId = PlayerPrefs.GetString("photoId"); // Access the passed argument
 
-    // Use the loadedImage for display or other processing
-    anotherImage.texture = loadedImage;
-}
-else
-{
-    Debug.Log("No image found at: " + imagePath);
-}
+        string retrievedImageData = PlayerPrefs.GetString("imageData");
+        byte[] decodedImageData = Convert.FromBase64String(retrievedImageData); // Decode from Base64
+        // Create and apply a Texture2D from the image data
+        Texture2D loadedImage = new Texture2D(500, 400); // Adjust dimensions as needed
+        loadedImage.LoadImage(decodedImageData);
+        loadedImage.Apply();
 
-        // if (ImageManager.capturedImage != null)
-        // {
-        //     ImageManager.capturedImage.Apply(); // Ensure it's ready for use
-        //     anotherImage.texture = ImageManager.capturedImage;
-
-        //     // Clear the image for subsequent captures (if needed)
-        //     ImageManager.capturedImage = null;
-        // }
-        // else
-        // {
-        //     Debug.LogWarning("ImageManager doesn't contain a captured image");
-        // }
+        // Display the loaded image
+        anotherImage.texture = loadedImage;
     }
 
-    // ... rest of your code
 }

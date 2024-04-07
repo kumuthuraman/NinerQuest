@@ -4,13 +4,18 @@ using Firebase;
 using Firebase.Auth;
 using TMPro;
 using System.Threading.Tasks;
+using Firebase.Extensions;
+using UnityEngine.SceneManagement;
+using Firebase.Firestore;
+using System.Collections.Generic;
+
 
 public class AuthManager : MonoBehaviour
 {
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
-    public FirebaseAuth auth;    
+    public FirebaseAuth auth;
     public FirebaseUser User;
 
     //Login variables
@@ -27,6 +32,16 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField passwordRegisterField;
     public TMP_InputField passwordRegisterVerifyField;
     public TMP_Text warningRegisterText;
+    Firebase.FirebaseApp app;
+    FirebaseFirestore db;
+
+    private void StoreUserInfoInPlayerPrefs()
+    {
+        // Store essential user information for later use
+        PlayerPrefs.SetString("userId", User.UserId);
+        PlayerPrefs.SetString("email", User.Email);
+        PlayerPrefs.SetString("displayName", User.DisplayName);
+    }
 
     void Awake()
     {
@@ -38,6 +53,10 @@ public class AuthManager : MonoBehaviour
             {
                 //If they are avalible Initialize Firebase
                 InitializeFirebase();
+                app = Firebase.FirebaseApp.DefaultInstance;
+                // Within the Awake function
+                db = FirebaseFirestore.DefaultInstance;
+
             }
             else
             {
@@ -107,11 +126,48 @@ public class AuthManager : MonoBehaviour
             //Now get the result
             User = LoginTask.Result.User;
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
+            loggingIn();
+            StoreUserInfoInPlayerPrefs();
             warningLoginText.text = "";
-            confirmLoginText.text = "Logged In";
+            confirmLoginText.text = "Logging In";
+            SceneManager.LoadScene("Feed");
         }
     }
 
+    private async void loggingIn()
+    {
+        // Create or retrieve the user's document in Firestore
+        DocumentReference userDocRef = db.Collection("users").Document(User.UserId);
+
+        // Check if the document already exists
+        DocumentSnapshot snapshot = await userDocRef.GetSnapshotAsync();
+        if (!snapshot.Exists)
+        {
+            // Create the document with initial data
+            await userDocRef.SetAsync(new Dictionary<string, object>()
+            {
+                { "username", User.DisplayName },
+                { "email", User.Email },
+                { "streaks", 0}
+                // Add other fields as needed
+            });
+
+            Debug.Log("User document created in Firestore.");
+        }
+        else
+        {
+            Debug.Log("User document already exists in Firestore.");
+
+            Dictionary<string, object> user = snapshot.ToDictionary();
+
+            // Load the streak from Firestore
+            int firestoreStreak = (int)user["streaks"];
+
+            // Save the streak to PlayerPrefs
+            PlayerPrefs.SetInt("streak", firestoreStreak);
+            PlayerPrefs.Save(); 
+        }
+    }
     private IEnumerator Register(string _email, string _password, string _username)
     {
         if (_username == "")
@@ -119,12 +175,12 @@ public class AuthManager : MonoBehaviour
             //If the username field is blank show a warning
             warningRegisterText.text = "Missing Username";
         }
-        else if(passwordRegisterField.text != passwordRegisterVerifyField.text)
+        else if (passwordRegisterField.text != passwordRegisterVerifyField.text)
         {
             //If the password does not match show a warning
             warningRegisterText.text = "Password Does Not Match!";
         }
-        else 
+        else
         {
             //Call the Firebase auth signin function passing the email and password
             Task<AuthResult> RegisterTask = auth.CreateUserWithEmailAndPasswordAsync(_email, _password);
@@ -165,7 +221,7 @@ public class AuthManager : MonoBehaviour
                 if (User != null)
                 {
                     //Create a user profile and set the username
-                    UserProfile profile = new UserProfile{DisplayName = _username};
+                    UserProfile profile = new UserProfile { DisplayName = _username };
 
                     //Call the Firebase auth update user profile function passing the profile with the username
                     Task ProfileTask = User.UpdateUserProfileAsync(profile);
