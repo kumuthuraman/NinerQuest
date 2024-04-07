@@ -11,10 +11,12 @@ public class CreatePost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {    
+        System.Random random = new System.Random();
         Debug.Log("Create post script");
         // In a script in the "createPost" scene:
-string imagePath = Application.persistentDataPath + "/captured_image.png";
-Debug.Log("Path: " + imagePath);
+string imagePath = Application.persistentDataPath + "/" + random.Next(10,50) + ".png";
+Debug.Log("Path: " + imagePath + " | " + System.IO.File.Exists(imagePath));
+
 if (System.IO.File.Exists(imagePath))
 {
     byte[] imageData = System.IO.File.ReadAllBytes(imagePath);

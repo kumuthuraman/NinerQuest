@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase.Firestore;
+using System.Threading.Tasks;
 
 public class CameraManager : MonoBehaviour
 {
@@ -67,11 +69,34 @@ public class CameraManager : MonoBehaviour
     
     byte[] imageBytes = image.EncodeToPNG();
 
+    // Save the image to Firestore
+        // await SaveImageToFirestore(imageBytes);
+
     // Save the image data
     SaveImage(imageBytes);
     
     SceneManager.LoadScene("createPost");
 }
+
+// private async Task SaveImageToFirestore(byte[] imageData)
+//     {
+//         // Get a reference to Firestore
+//         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+
+//         // Create a new document reference for the image
+//         DocumentReference docRef = db.Collection("images").Document();
+
+//         // Convert image bytes to a Firebase-compatible format (e.g., base64 string)
+//         string imageString = Convert.ToBase64String(imageData);
+
+//         // Add image data to the document
+//         await docRef.SetAsync(new Dictionary<string, object>
+//         {
+//             { "image", imageString }
+//         });
+
+//         Debug.Log("Image saved to Firestore: " + docRef.Id);
+//     }
 
 private void SaveImage(byte[] imageData)
 {
