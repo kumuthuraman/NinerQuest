@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Task A: Go to the top floor of the UREC'
+  m_text: 'Quest A: Go to the top floor of the UREC'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
   m_sharedMaterial: {fileID: -6191776601630506076, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
@@ -1816,8 +1816,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '    Week of 3/1/24'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 921b1828915205c4fa382e04edc245f8, type: 2}
-  m_sharedMaterial: {fileID: -1893676777404693721, guid: 921b1828915205c4fa382e04edc245f8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2192,7 +2192,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Monday, March 1st
+  m_text: Saturday, April 20th
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
   m_sharedMaterial: {fileID: -6191776601630506076, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
@@ -2327,10 +2327,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: My Daily Tasks
+  m_text: My Daily Quests
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 921b1828915205c4fa382e04edc245f8, type: 2}
-  m_sharedMaterial: {fileID: -1893676777404693721, guid: 921b1828915205c4fa382e04edc245f8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2747,7 +2747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Task B: Take NinerTransit somewhere'
+  m_text: 'Quest B: Take NinerTransit somewhere'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
   m_sharedMaterial: {fileID: -6191776601630506076, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
