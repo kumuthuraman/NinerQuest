@@ -14,8 +14,33 @@ public class DataHolding : MonoBehaviour
     public GameObject imageDisplay;
     public GameObject captionText;
 
+    public Toggle myToggle1;
+    public Toggle myToggle2;
+
     public void OnToggle1() {
 
+        if(myToggle1.isOn){
+            isTask1 = true;
+            isTask2 = false;
+            myToggle2.isOn = false;
+        }
+        else{
+            isTask1 = false;
+            isTask2 = true;
+            myToggle2.isOn = true;
+        }
+    }
+    public void OnToggle2() {
+        if(myToggle2.isOn){
+            isTask1 = false;
+            isTask2 = true;
+            myToggle1.isOn = false;
+        }
+        else{
+            isTask1 = true;
+            isTask2 = false;
+            myToggle1.isOn = true;
+        }
     }
 
     public void OnSubmit() {
