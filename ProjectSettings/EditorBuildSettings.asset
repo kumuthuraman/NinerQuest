@@ -30,4 +30,5 @@ EditorBuildSettings:
     path: Assets/Scenes/createPost.unity
     guid: e29f803fca1eb7d4da889d49a64a107e
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 907ff9e89e26c5843b400c2432ba1133, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 3856c7db54b734c7db8bf6b7a8b37ce7, type: 2}
