@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DataHolding : MonoBehaviour
 {
-    public Image image;
+    public Sprite sprite;
     public string caption;
     public bool isTask1;
     public bool isTask2;
@@ -44,7 +45,9 @@ public class DataHolding : MonoBehaviour
     }
 
     public void OnSubmit() {
-        image = imageDisplay.GetComponent<Image>();
-        caption = captionText.GetComponent<TMP_Text>().text;
+        sprite = imageDisplay.GetComponent<Image>().sprite;
+        caption = captionText.GetComponent<TMP_InputField>().text;
+
+        SceneManager.LoadScene("Feed");
     }
 }
