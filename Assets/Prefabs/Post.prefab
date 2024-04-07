@@ -142,8 +142,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Streak
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
+  m_sharedMaterial: {fileID: -6191776601630506076, guid: 247057f2688e8ee40a24bb628a25019f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -243,7 +243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234.39, y: 214.89}
+  m_AnchoredPosition: {x: -234.39, y: 205}
   m_SizeDelta: {x: 100.0141, y: 92.5034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7261376217007325890
@@ -391,8 +391,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Username
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3cb5762dcac039d448be54293f148003, type: 2}
+  m_sharedMaterial: {fileID: 8148852276316531, guid: 3cb5762dcac039d448be54293f148003, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
