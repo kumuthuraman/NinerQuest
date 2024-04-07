@@ -436,6 +436,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 63
+    m_Metrics:
+      m_Width: 46.53125
+      m_Height: 63.28125
+      m_HorizontalBearingX: 1.171875
+      m_HorizontalBearingY: 62.375
+      m_HorizontalAdvance: 49.953125
+    m_GlyphRect:
+      m_X: 133
+      m_Y: 446
+      m_Width: 47
+      m_Height: 64
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 74
     m_Metrics:
       m_Width: 37.984375
@@ -466,21 +481,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 63
-    m_Metrics:
-      m_Width: 46.53125
-      m_Height: 63.28125
-      m_HorizontalBearingX: 1.171875
-      m_HorizontalBearingY: 62.375
-      m_HorizontalAdvance: 49.953125
-    m_GlyphRect:
-      m_X: 133
-      m_Y: 446
-      m_Width: 47
-      m_Height: 64
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -505,6 +505,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 52
     m_GlyphIndex: 58
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 54
+    m_GlyphIndex: 63
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 68
@@ -565,10 +569,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 121
     m_GlyphIndex: 38
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 54
-    m_GlyphIndex: 63
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 4448206191352936004}
@@ -943,7 +943,8 @@ MonoBehaviour:
           m_YAdvance: 0
       m_FeatureLookupFlags: 0
   fallbackFontAssets: []
-  m_FallbackFontAssetTable: []
+  m_FallbackFontAssetTable:
+  - {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: 83db506ea5fa7384183dc7c53018c800
