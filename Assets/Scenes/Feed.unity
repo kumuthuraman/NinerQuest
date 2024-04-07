@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Post
       objectReference: {fileID: 0}
+    - target: {fileID: 8438933237952744704, guid: 9ed534c0c50e1be4180e45432a1dd15f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54df55b5df8ff1d4983f81ff5b7ce364, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -737,6 +741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Post (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8438933237952744704, guid: 9ed534c0c50e1be4180e45432a1dd15f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17d7c4bdf9ceab840a84f981b3346f22, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

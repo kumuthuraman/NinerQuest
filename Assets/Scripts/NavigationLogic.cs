@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,8 +8,43 @@ using TMPro;
 public class NavigationLogic : MonoBehaviour
 {
     private Scene currScene;
+    public GameObject saveBox;
+    private string goTo;
     void Start() {
         currScene = SceneManager.GetActiveScene();
+    }
+
+    public void AskToSave(string goingTo) {
+        goTo = goingTo;
+        saveBox.SetActive(true);
+    }
+
+    public void CancelAskToSave() {
+        saveBox.SetActive(false);
+    }
+
+    public void DoNav() {
+        saveBox.SetActive(false);
+        
+        switch (goTo) {
+            case "TaskList":
+                GoTasks();
+                break;
+            case "Feed":
+                GoFeed();
+                break;
+            case "Camera":
+                GoCamera();
+                break;
+            case "Calendar":
+                GoCalendar();
+                break;
+            case "Profile":
+                GoProfile();
+                break;
+            default:
+                throw new Exception("bad navigation input");
+        }
     }
     public void GoTasks() {
         if (currScene.name != "TaskList") {
